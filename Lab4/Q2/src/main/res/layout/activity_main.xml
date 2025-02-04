@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:padding="16dp">
+
+
+    <!-- Button -->
+    <!-- Button for Android version 1.5 -->
+    <Button
+        android:id="@+id/buttonCupcake"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cupcake (1.5)" />
+
+    <!-- Button for Android version 2.2 -->
+    <Button
+        android:id="@+id/buttonFroYo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FroYo (2.2)" />
+
+    <!-- Button for Android version 4.0 -->
+    <Button
+        android:id="@+id/buttonIceCreamSandwich"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ice Cream Sandwich (4.0)" />
+
+    <!-- Button for Android version 7.0 -->
+    <Button
+        android:id="@+id/buttonNougat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nougat (7.0)" />
+
+    <!-- Button for Android version 10 -->
+    <Button
+        android:id="@+id/buttonAndroidTen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Android 10" />
+
+</LinearLayout>
