@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Food Items"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- CheckBoxes for food items -->
+        <CheckBox
+            android:id="@+id/item1"
+            android:layout_width="139dp"
+            android:layout_height="26dp"
+            android:text="Burger - ₹120" />
+
+        <CheckBox
+            android:id="@+id/item2"
+            android:layout_width="139dp"
+            android:layout_height="26dp"
+            android:text="Pizza - ₹200" />
+
+        <CheckBox
+            android:id="@+id/item3"
+            android:layout_width="139dp"
+            android:layout_height="26dp"
+            android:text="Pasta - ₹150" />
+
+        <CheckBox
+            android:id="@+id/item4"
+            android:layout_width="139dp"
+            android:layout_height="26dp"
+            android:text="Fries - ₹80" />
+
+        <CheckBox
+            android:id="@+id/item5"
+            android:layout_width="139dp"
+            android:layout_height="26dp"
+            android:text="Coke - ₹50" />
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit Order"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
+</ScrollView>

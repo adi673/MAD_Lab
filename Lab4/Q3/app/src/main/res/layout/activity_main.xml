@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <!-- ToggleButton for switching between Wi-Fi and Mobile Data -->
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="Wi-Fi"
+        android:textOff="Mobile Data" />
+
+    <!-- ImageView for showing Wi-Fi or Mobile Data icon -->
+    <ImageView
+        android:id="@+id/modeImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/wifi_icon"
+        android:layout_marginTop="20dp" />
+
+    <!-- Button for changing mode -->
+    <Button
+        android:id="@+id/changeModeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Mode"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>
