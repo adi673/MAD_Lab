@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:id="@+id/main"
+    tools:context=".MainActivity">
+
+    <!-- Button to open the menu -->
+    <Button
+        android:id="@+id/btnMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Menu"
+        android:drawableTop="@drawable/ic_menu"
+        android:drawablePadding="8dp"
+        android:backgroundTint="@color/teal_700" />
+
+    <!-- ImageView to display selected image -->
+    <ImageView
+        android:id="@+id/imgDisplay"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="24dp"
+        android:scaleType="fitCenter"
+        android:visibility="gone" />
+
+</LinearLayout>

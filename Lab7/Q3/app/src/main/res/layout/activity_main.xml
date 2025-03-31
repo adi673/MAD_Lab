@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:id="@+id/main"
+    tools:context=".MainActivity">
+
+    <!-- Filter button -->
+    <Button
+        android:id="@+id/btnFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filter Options"
+
+        android:layout_gravity="end"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Display content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:padding="8dp"
+            android:text="Digital Transformation is the integration of digital technology into all areas of a business, fundamentally changing how organizations operate and deliver value to customers. It involves a cultural change that requires organizations to continually challenge the status quo, experiment, and get comfortable with failure. Technologies such as cloud computing, big data, artificial intelligence (AI), and the Internet of Things (IoT) play a major role in digital transformation." />
+    </ScrollView>
+
+</LinearLayout>
