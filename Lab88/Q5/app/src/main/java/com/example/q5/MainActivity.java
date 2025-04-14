@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         String email = etEmail.getText().toString();
 
         // Save data in SharedPreferences
+        
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("name", name);
         editor.putString("age", age);
