@@ -1275,3 +1275,140 @@ public void onCreate(Bundle savedInstanceState) {
     SharedPreferences sharedPreferences = getSharedPreferences("user_pref", Context.MODE_PRIVATE);
     int uId = sharedPreferences.getInt("userId", -1)
     String uName = sharedPreferences.getString("userName", "Guest");
+
+    #tab layout
+    fragment
+    public class infoFragment extends Fragment {
+        @Nullable
+        @Override
+        public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+            return inflater.inflate(R.layout.information, container, false);
+        }
+    }
+
+
+    #mainactivity 
+    package com.example.tab_layout;
+
+    import android.os.Bundle;
+    
+    import androidx.activity.EdgeToEdge;
+    import androidx.annotation.NonNull;
+    import androidx.appcompat.app.AppCompatActivity;
+    import androidx.core.graphics.Insets;
+    import androidx.core.view.ViewCompat;
+    import androidx.core.view.WindowInsetsCompat;
+    import androidx.viewpager2.widget.ViewPager2;
+    
+    import com.google.android.material.tabs.TabLayout;
+    import com.google.android.material.tabs.TabLayoutMediator;
+    
+    public class MainActivity extends AppCompatActivity {
+        TabLayout tab;
+        ViewPager2 viewPager;
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            EdgeToEdge.enable(this);
+            setContentView(R.layout.activity_main);
+            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+                Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+                return insets;
+            });
+    
+            tab=findViewById(R.id.tabLayout);
+            viewPager=findViewById(R.id.viePager2);
+    
+            viewPagerAdapter adapter=new viewPagerAdapter(this);
+            adapter.addFragment(new infoFragment(),"info");
+            adapter.addFragment(new viewfrag(),"Title");
+    
+            viewPager.setAdapter(adapter);
+    
+            new TabLayoutMediator(tab, viewPager, new TabLayoutMediator.TabConfigurationStrategy() {
+                @Override
+                public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                    tab.setText(adapter.getTitle(position));
+                }
+            }).attach();
+        }
+    }
+
+
+#viewPagerAdapter
+package com.example.tab_layout;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class viewPagerAdapter extends FragmentStateAdapter {
+    List<Fragment> fragList=new ArrayList<>();
+    List<String> titleTab=new ArrayList<>();
+
+    public viewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
+        super(fragmentActivity);
+    }
+
+    @NonNull
+    @Override
+    public Fragment createFragment(int position) {
+        return fragList.get(position);
+    }
+
+    public String getTitle(int position){
+        return titleTab.get(position);
+    }
+    void addFragment(Fragment frag, String title){
+        fragList.add(frag);
+        titleTab.add(title);
+    }
+
+    @Override
+    public int getItemCount() {
+        return fragList.size();
+    }
+
+}
+#fragmetn xml<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Hello From information Fragment"/>
+
+</LinearLayout>
+
+#actibvity main xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+
+        android:layout_height="40dp"
+        />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viePager2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</LinearLayout>
